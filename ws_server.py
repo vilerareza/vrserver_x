@@ -36,7 +36,7 @@ async def on_connect(websocket):
                 break
 
     source, device = websocket.path.split('/')[0], websocket.path.split('/')[0]
-    print (f'Connection request, {websocket.path}')
+    print (f'Connection request, {websocket.path}, {source}, {device}')
     frames [device] = Frame()
     if source == 'device':
         await receive(websocket)
